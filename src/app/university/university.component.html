@@ -1,0 +1,17 @@
+<mat-grid-list cols="4" rowHeight="3:2">
+    <mat-grid-tile *ngFor="let item of countryDetail[0]">
+<mat-card  >
+    <mat-card-header>
+        University:- {{item.name}}
+    </mat-card-header>
+    <mat-card-content>
+        alpha_two_code: {{item.alpha_two_code}}
+    </mat-card-content>
+    <mat-card-actions>
+       Web Link: <a href="{{item.web_pages}}"> {{item.web_pages}}</a>
+
+       
+    </mat-card-actions>
+</mat-card>
+</mat-grid-tile>
+</mat-grid-list>
