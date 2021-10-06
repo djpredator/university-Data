@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 import { DatasharingService } from '../services/datasharing.service';
 import { Router } from '@angular/router';
+import {countryModel,RootObject} from '../model/country.model'
 
 @Component({
   selector: 'app-countries-list',
@@ -16,9 +17,9 @@ export class CountriesListComponent implements OnInit {
  countriesFilter: Observable<string[]> | undefined;
  selectedcountry:string ='';
 
-  dataofAPI: Array<any> = new Array();
-  countries: Array<any> = new Array();
-  countryData!: any;
+  dataofAPI: Array<RootObject> = new Array();
+  countries: Array<RootObject> = new Array();
+  countryData:any
   values?: string;
   constructor(private countryservice: CountryService, private datasharingservice:DatasharingService, private router:Router) { }
 
@@ -30,12 +31,12 @@ export class CountriesListComponent implements OnInit {
    );
 
 
-    this.countryservice.getCountries().subscribe(message => {
+    this.countryservice.getCountries().subscribe((message) => {
       console.log("All data of API", message)
       this.countryData = message;
       // console.log(this.countryData['data']['IN']['country'])
       for ([this.values] of Object.entries(this.countryData['data'])) {
-        console.log(this.values)
+        // console.log(this.values)
         console.log(this.countryData['data'][`${this.values}`]['country'])
         this.countries.push(this.countryData['data'][`${this.values}`]['country'])
       }

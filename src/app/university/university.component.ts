@@ -3,6 +3,8 @@ import { DatasharingService } from '../services/datasharing.service';
 import { Subscription } from 'rxjs';
 import { UniversityService } from '../services/university.service';
 import { ActivatedRoute } from '@angular/router';
+import {universityModel} from '../model/university.model'
+
 
 @Component({
   selector: 'app-university',
