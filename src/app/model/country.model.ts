@@ -1,6 +1,3 @@
-export interface countryModel{
-
-}
 
     export interface DZ {
         country: string;
@@ -605,7 +602,7 @@ export interface countryModel{
         BZ: BZ;
     }
 
-    export interface RootObject {
+    export interface countryModel {
         
         
         data: Data;

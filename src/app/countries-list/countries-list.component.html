@@ -1,27 +1,18 @@
-<!-- <select class="form-control form-control-sm" style="margin-left: 30px;">
-        <option *ngFor="let item of countries" routerLink=''>{{item}}</option>
-      </select>
-   -->
-<!-- <p>You selected: {{dropAlert}}</p>
-    (change)="SelectAlertinDrop($event)" -->
-
-
-
-<form class="example-form"(ngSubmit)="selectChangeCountry($event)" >
+<form  class="example-form"(ngSubmit)="selectChangeCountry($event)" >
   <mat-label>List of Countries:- </mat-label>
   <mat-form-field class="example-full-width" appearance="fill">
-    <input matInput type="text" placeholder="Search for a country" [formControl]="control" [matAutocomplete]="auto"
+    <input matInput type="text" formControlName="country"  placeholder="Search for a country" [formControl]="control" [matAutocomplete]="auto"
       value="">
 
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option #box *ngFor="let item of countriesFilter |async" [value]="item"  >
+      <mat-option #box *ngFor="let item of options " [value]="item"  >
         {{item}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
   <button routerLink='{{selectedcountry}}'>click</button>
-  <!-- <p>Your Selected country is:-{{selectedcountry}}</p> -->
 </form>
 
-<!-- (change)="selectChangeCountry($event)" -->
 
+
+<!--  -->

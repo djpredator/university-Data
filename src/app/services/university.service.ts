@@ -6,15 +6,10 @@ import { Observable } from 'rxjs';
 })
 export class UniversityService {
 
-  universityURL='http://universities.hipolabs.com/search?country='
-
+  universityURL = 'http://universities.hipolabs.com/search?country='
   constructor(private httpclient: HttpClient) {
-   
-   }
-
-   getUniversity(pass: any){
+  }
+  getUniversity(pass: string | null) {
     return this.httpclient.get(this.universityURL + pass)
-   }
+  }
 }
-// 
-// 
